@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.lexilift.account.mapper.AccountMapper">
+    
+    <insert id="insert">
+        insert into sys_account
+        values (#{accountId}, #{accountName}, #{email}, #{password}, #{passwordSalt}, #{status}, #{roleId})
+    </insert>
+
+
+    <select id="count" resultType="long">
+        select count(1)
+        from sys_account
+        <where>
+            <if test="roleId != null and roleId != ''"> AND role_id = #{roleId} </if>
+        </where>
+    </select>
+
+</mapper>

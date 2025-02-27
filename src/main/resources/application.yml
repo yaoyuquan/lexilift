@@ -1,0 +1,11 @@
+spring.datasource:
+  url: jdbc:postgresql://localhost:5432/lexilift
+  username: postgres
+  password: 1234
+
+
+logging:
+  level:
+    root: warn
+    org.springframework: debug
+    com.github: debug
